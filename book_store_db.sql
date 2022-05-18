@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `book_store_db`
 --
 
-CREATE DATABASE IF NOT EXISTS `book_store_db` DEFAULT CHARACTER SET utf8;
+-- CREATE DATABASE IF NOT EXISTS `book_store_db` DEFAULT CHARACTER SET utf8;
 
 -- --------------------------------------------------------
 
