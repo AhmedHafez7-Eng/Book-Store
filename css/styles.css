@@ -88,6 +88,39 @@ html {
     background-color: var(--orange);
 }
 
+.message {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    gap: 1.5rem;
+}
+
+.message span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.message i {
+    cursor: pointer;
+    color: var(--red);
+    font-size: 2.5rem;
+}
+
+.message i:hover {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
 /* Register Page */
 .form-container {
     min-height: 100vh;
