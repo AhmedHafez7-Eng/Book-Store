@@ -1,3 +1,7 @@
+/* =================
+========= Default Styles Configs =========
+==================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root {
@@ -49,6 +53,10 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 2rem;
 }
 
 .btn,
@@ -121,7 +129,20 @@ html {
     -o-transform: rotate(90deg);
 }
 
-/* Register Page */
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+        -webkit-transform: translateY(1rem);
+        -moz-transform: translateY(1rem);
+        -ms-transform: translateY(1rem);
+        -o-transform: translateY(1rem);
+        opacity: 0.2;
+    }
+}
+
+/* =================
+========= register.php =========
+==================== */
 .form-container {
     min-height: 100vh;
     background-color: var(--light-background);
@@ -176,4 +197,60 @@ html {
 
 .form-container form a {
     text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================
+========= Media Queries =========
+==================== */
+
+@media(max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
 }

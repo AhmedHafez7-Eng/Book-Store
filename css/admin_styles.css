@@ -1,0 +1,313 @@
+/* =================
+========= Default Styles Configs =========
+==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root {
+    --purple: #8e44ad;
+    --orange: #f39c12;
+    --black: #333;
+    --red: #c0392b;
+    --white: #FFF;
+    --light-color: #666;
+    --light-white: #CCC;
+    --light-background: #f5f5f5;
+    --border-custom: .1rem solid var(--black);
+    --box-shadow-custom: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
+*::selection {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+*::-webkit-scrollbar {
+    width: 1rem;
+    height: .5rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 2rem;
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    text-transform: capitalize;
+}
+
+.white-btn,
+.btn {
+    background-color: var(--purple);
+}
+
+.delete-btn {
+    background-color: var(--red);
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover {
+    background-color: var(--black);
+}
+
+.option-btn:hover {
+    background-color: var(--orange);
+}
+
+.message {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+    background-color: var(--light-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    gap: 1.5rem;
+}
+
+.message span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.message i {
+    cursor: pointer;
+    color: var(--red);
+    font-size: 2.5rem;
+}
+
+.message i:hover {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+        -webkit-transform: translateY(1rem);
+        -moz-transform: translateY(1rem);
+        -ms-transform: translateY(1rem);
+        -o-transform: translateY(1rem);
+        opacity: 0.2;
+    }
+}
+
+/* =================
+========= admin/home.php =========
+==================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--white);
+}
+
+.header .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.header .flex .logo span {
+    color: var(--purple);
+}
+
+.header .flex .navbar a {
+    margin: 0 1rem;
+    color: var(--black);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.header .flex .navbar a:hover {
+    color: var(--purple);
+}
+
+.header .flex .icons div {
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .flex .icons div:hover {
+    color: var(--purple);
+}
+
+.header .flex .account-box {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    width: 30rem;
+    box-shadow: var(--box-shadow-custom);
+    padding: 2rem;
+    text-align: center;
+    border-radius: .5rem;
+    -webkit-border-radius: .5;
+    -moz-border-radius: .5;
+    -ms-border-radius: .5;
+    -o-border-radius: .5;
+    border: var(--border-custom);
+    display: none;
+    animation: fadeIn .2s linear;
+    -webkit-animation: fadeIn .2s lin;
+}
+
+.header .flex .account-box.show-account {
+    display: inline-block;
+}
+
+.header .flex .account-box p {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.header .flex .account-box p span {
+    color: var(--purple);
+}
+
+.header .flex .account-box .delete-btn {
+    margin-top: 0;
+}
+
+#menu-btn {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================
+========= Media Queries =========
+==================== */
+
+@media(max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-bottom: var(--border-custom);
+        border-top: var(--border-custom);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .flex .navbar.show-menu {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem 0;
+        text-align: center;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}

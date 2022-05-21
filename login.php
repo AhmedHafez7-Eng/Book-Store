@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['admin_email'] = $row['email'];
             $_SESSION['admin_id'] = $row['id'];
             header('location: admin/home.php');
+            // var_dump($_SESSION);
         } else if ($row['user_type'] == 'user') {
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['user_email'] = $row['email'];
