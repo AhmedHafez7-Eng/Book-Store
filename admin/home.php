@@ -1,6 +1,13 @@
 <?php
 
+include 'config.php';
 session_start();
+
+$admin_id = $_SESSION['admin_id'];
+
+if (!isset($admin_id)) {
+    header('Location: ../login.php');
+}
 
 ?>
 
@@ -39,7 +46,7 @@ session_start();
 
 
     <!-- Custom admin js file -->
-    <script src="/js/admin_script.js"></script>
+    <script src="../js/admin_script.js"></script>
 </body>
 
 </html>

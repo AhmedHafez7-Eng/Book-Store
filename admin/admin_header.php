@@ -17,7 +17,7 @@
         <div class="account-box">
             <p>Username: <span><?php echo $_SESSION['admin_name']; ?></span></p>
             <p>Email: <span><?php echo $_SESSION['admin_email']; ?></span></p>
-            <a href="/logout.php" class="delete-btn">Logout</a>
+            <a href="../logout.php" class="delete-btn">Logout</a>
         </div>
     </div>
 </header>
