@@ -50,6 +50,10 @@
     background-color: var(--purple);
 }
 
+body {
+    background-color: var(--light-background);
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -57,6 +61,14 @@ html {
 
 section {
     padding: 3rem 2rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 4rem;
 }
 
 .btn,
@@ -201,6 +213,7 @@ section {
     width: 30rem;
     /* height: 172px;
     overflow-y: scroll; */
+    background-color: var(--white);
     box-shadow: var(--box-shadow-custom);
     padding: 2rem;
     text-align: center;
@@ -237,10 +250,57 @@ section {
     display: none;
 }
 
+.dashboard .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.dashboard .box-container .box {
+    background-color: var(--light-background);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow-custom);
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
 
+.dashboard .box-container .box:hover {
+    background-color: var(--purple);
+}
 
+.dashboard .box-container .box h3 {
+    font-size: 4rem;
+    color: var(--purple);
+}
 
+.dashboard .box-container .box:hover h3 {
+    color: var(--white);
+}
+
+.dashboard .box-container .box p {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.dashboard .box-container .box:hover p {
+    color: var(--white);
+}
 
 
 
