@@ -254,7 +254,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
-    align-items: flex-start;
+/*     align-items: flex-start; */
     max-width: 1200px;
     margin: 0 auto;
 }
