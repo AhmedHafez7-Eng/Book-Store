@@ -94,6 +94,10 @@ section {
     background-color: var(--purple);
 }
 
+.option-btn {
+    background-color: var(--orange);
+}
+
 .delete-btn {
     background-color: var(--red);
 }
@@ -102,10 +106,6 @@ section {
 .option-btn:hover,
 .delete-btn:hover {
     background-color: var(--black);
-}
-
-.option-btn:hover {
-    background-color: var(--orange);
 }
 
 .message {
@@ -141,6 +141,15 @@ section {
     -o-transform: rotate(90deg);
 }
 
+.empty {
+    padding: 1.5rem;
+    text-align: center;
+    border: var(--border-custom);
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 2rem;
+}
+
 @keyframes fadeIn {
     0% {
         transform: translateY(1rem);
@@ -153,7 +162,7 @@ section {
 }
 
 /* =================
-========= admin/home.php =========
+========= admin/admin_header.php =========
 ==================== */
 
 .header {
@@ -250,6 +259,10 @@ section {
     display: none;
 }
 
+/* =================
+========= admin/home.php =========
+==================== */
+
 .dashboard .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -302,8 +315,90 @@ section {
     color: var(--white);
 }
 
+/* =================
+========= admin/products.php =========
+==================== */
+.add-products form {
+    background-color: var(--light-background);
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    box-shadow: var(--box-shadow-custom);
+    /*border: var(--border-custom);
+    */
+    max-width: 50rem;
+    margin: 0 auto;
+}
 
+.add-products form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
 
+.add-products form .box {
+    width: 100%;
+    background-color: var(--light-background);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: 1rem 0;
+    padding: 1.2rem 1.4rem;
+    color: var(--black);
+    font-size: 1.8rem;
+    box-shadow: var(--box-shadow-custom);
+}
+
+.show-products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.show-products .box-container .box {
+    background-color: var(--light-background);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow-custom);
+    /* border: var(--border-custom); */
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
+.show-products .box-container .box img {
+    height: 30rem;
+}
+
+.show-products .box-container .box .name {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: var(--black);
+}
+
+.show-products .box-container .box .price {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--purple);
+}
 
 
 

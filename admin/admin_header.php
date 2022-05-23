@@ -16,13 +16,13 @@ if (isset($message)) {
 
 <header class="header">
     <div class="flex">
-        <a href="/admin/home.php" class="logo">Admin <span>Panel</span></a>
+        <a href="./home.php" class="logo">Admin <span>Panel</span></a>
         <nav class="navbar">
-            <a href="/admin/home.php">home</a>
-            <a href="/admin/products.php">products</a>
-            <a href="/admin/orders.php">orders</span></a>
-            <a href="/admin/users.php">users</a>
-            <a href="/admin/contacts.php">messages</a>
+            <a href="./home.php">home</a>
+            <a href="./products.php">products</a>
+            <a href="./orders.php">orders</span></a>
+            <a href="./users.php">users</a>
+            <a href="./contacts.php">messages</a>
         </nav>
 
         <div class="icons">
