@@ -38,19 +38,56 @@ if (isset($_POST['add_product'])) {
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
+
+    $select_del_product = mysqli_query($conn, "SELECT image FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
+    $fetch_delete_image = mysqli_fetch_assoc($select_del_product);
+
+    unlink('../uploaded_img/' . $fetch_delete_image['image']);
+
     $delete_product = mysqli_query($conn, "DELETE FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
+    var_dump($delete_product);
     if ($delete_product) {
         $message[] = 'Product has been deleted successfully';
+        header('Location:products.php');
     } else {
         $message[] = 'Product not deleted, Try again';
     }
 }
 
-// if (isset($_GET['update'])) {
-//     $id = $_GET['update'];
-//     $select_product = mysqli_query($conn, "SELECT * FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
-//     $product = mysqli_fetch_assoc($select_product);
-// }
+if (isset($_POST['update_product'])) {
+    $updated_p_id = $_POST['update_p_id'];
+    $update_name = $_POST['update_name'];
+    $update_price = $_POST['update_price'];
+
+    if (!empty($update_name)) {
+        mysqli_query($conn, "UPDATE products SET name = '$update_name' WHERE id = '$updated_p_id'") or die("Query failed: " . mysqli_connect_error());
+        $message[] = 'Product updated successfully';
+    }
+
+    if (!empty($update_price)) {
+        mysqli_query($conn, "UPDATE products SET price = '$update_price' WHERE id = '$updated_p_id'") or die("Query failed: " . mysqli_connect_error());
+        $message[] = 'Product updated successfully';
+    }
+
+    $update_image = $_FILES['update_image']['name'];
+    $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
+    $update_image_size = $_FILES['update_image']['size'];
+    $update_image_folder = '../uploaded_img/' . $update_image;
+    $update_old_image = $_POST['update_old_image'];
+
+    if (!empty($update_image)) {
+        if ($update_image_size > 2000000) {
+            $message[] = 'Image size is too big';
+        } else {
+            move_uploaded_file($update_image_tmp_name, $update_image_folder);
+            mysqli_query($conn, "UPDATE products SET image = '$update_image' WHERE id = '$updated_p_id'") or die("Query failed: " . mysqli_connect_error());
+            unlink('../uploaded_img/' . $update_old_image);
+            $message[] = 'Product updated successfully';
+        }
+    }
+
+    header('Location: products.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -114,6 +151,46 @@ if (isset($_GET['delete'])) {
             }
             ?>
         </div>
+    </section>
+
+    <!-- Edit Product -->
+    <section class="edit-product">
+        <?php
+        if (isset($_GET['update'])) {
+            $id = $_GET['update'];
+            $select_product = mysqli_query($conn, "SELECT * FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($row = mysqli_fetch_assoc($select_product)) {
+
+        ?>
+
+        <h3>Edit Product</h3>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="update_p_id" value="<?php echo $row['id']; ?>">
+            <input type="hidden" name="update_old_image" value="<?php echo $row['image']; ?>">
+
+            <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
+
+            <input type="text" name="update_name" id="update_name" class="box" placeholder="Update Product Name"
+                value="<?php echo $row['name']; ?>">
+
+            <input type="number" name="update_price" min="0" id="update_price" class="box"
+                placeholder="Update Product Price" value="<?php echo $row['price']; ?>">
+
+            <input type="file" name="update_image" id="update_image" class="box"
+                accept="image/jpg, image/jpeg, image/png">
+
+            <input type="submit" value="Update" name="update_product" class="btn">
+            <input type="reset" value="Cancel" id="cancel-edit" class="option-btn">
+        </form>
+
+        <?php
+                }
+            }
+        } else {
+            echo "<script>document.querySelector('.edit-product').style.display = 'none';</script>";
+        }
+        ?>
     </section>
 
 

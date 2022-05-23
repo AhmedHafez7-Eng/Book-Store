@@ -87,6 +87,7 @@ section {
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .white-btn,
@@ -400,12 +401,59 @@ section {
     color: var(--purple);
 }
 
+.edit-product {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+}
 
+.edit-product form {
+    width: 50rem;
+    height: 60rem;
+    overflow-y: scroll;
+    padding: 2rem;
+    text-align: center;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    background-color: var(--white);
+}
 
+.edit-product form img {
+    height: 25rem;
+    margin-bottom: 1rem;
+}
 
+.edit-product form .box {
+    width: 100%;
+    background-color: var(--light-background);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: 1rem 0;
+    padding: 1.2rem 1.4rem;
+    color: var(--black);
+    font-size: 1.8rem;
+    box-shadow: var(--box-shadow-custom);
+}
 
-
-
+.edit-product form .btn,
+.edit-product form .option-btn {
+    width: 40%;
+}
 
 
 
@@ -466,5 +514,9 @@ section {
 @media(max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    .title {
+        font-size: 3rem;
     }
 }

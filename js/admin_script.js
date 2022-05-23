@@ -16,3 +16,9 @@ window.onscroll = () => {
     navbar.classList.remove('show-menu');
     accountBox.classList.remove('show-account');
 }
+
+document.querySelector('#cancel-edit').onclick = () => {
+    // document.querySelector('.edit-product form').reset();
+    document.querySelector('.edit-product').style.display = 'none';
+    window.location.href = '../admin/products.php';
+}
