@@ -36,6 +36,22 @@ if (isset($_POST['add_product'])) {
     }
 };
 
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $delete_product = mysqli_query($conn, "DELETE FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
+    if ($delete_product) {
+        $message[] = 'Product has been deleted successfully';
+    } else {
+        $message[] = 'Product not deleted, Try again';
+    }
+}
+
+// if (isset($_GET['update'])) {
+//     $id = $_GET['update'];
+//     $select_product = mysqli_query($conn, "SELECT * FROM products WHERE id = '$id'") or die("Query failed: " . mysqli_connect_error());
+//     $product = mysqli_fetch_assoc($select_product);
+// }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
