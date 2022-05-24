@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     }
 
     // $user_type = $_POST['user_type'];
-    $user_type = 'admin';
+    $user_type = 'user';
 
     $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' OR password = '$pass'") or die("Query failed: " . mysqli_connect_error());
 

@@ -414,7 +414,8 @@ section {
     color: var(--purple);
 }
 
-.edit-product {
+.edit-product,
+.edit-profile {
     width: 100%;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, .7);
@@ -429,7 +430,8 @@ section {
     z-index: 1200;
 }
 
-.edit-product form {
+.edit-product form,
+.edit-profile form {
     width: 50rem;
     height: 60rem;
     overflow-y: scroll;
@@ -443,12 +445,14 @@ section {
     background-color: var(--white);
 }
 
-.edit-product form img {
+.edit-product form img,
+.edit-profile form img {
     height: 25rem;
     margin-bottom: 1rem;
 }
 
-.edit-product form .box {
+.edit-product form .box,
+.edit-profile form .box {
     width: 100%;
     background-color: var(--light-background);
     border-radius: .5rem;
@@ -464,7 +468,9 @@ section {
 }
 
 .edit-product form .btn,
-.edit-product form .option-btn {
+.edit-product form .option-btn,
+.edit-profile form .btn,
+.edit-profile form .option-btn {
     width: 40%;
 }
 
