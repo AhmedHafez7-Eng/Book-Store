@@ -2,14 +2,25 @@
 
 include 'config.php';
 
+
 if (isset($_POST['submit'])) {
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
     $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+
+    $p_image = basename($_FILES['p_image']['name']);
+    if (empty($p_image)) {
+        $p_image = "default_avatar.jpg";
+    } else {
+        $p_image_size = $_FILES['p_image']['size'];
+        $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
+        $p_image_folder = 'users_img/' . $p_image;
+    }
+
     // $user_type = $_POST['user_type'];
-    $user_type = 'user';
+    $user_type = 'admin';
 
     $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' OR password = '$pass'") or die("Query failed: " . mysqli_connect_error());
 
@@ -20,10 +31,21 @@ if (isset($_POST['submit'])) {
         if ($pass != $cpass) {
             $message[] = "Confirm password does not match!";
         } else {
-            $insert_users = mysqli_query($conn, "INSERT INTO users (name, email, password, user_type) VALUES ('$name', '$email', '$pass', '$user_type')") or die("Query failed: " . mysqli_connect_error());
+            $insert_users = mysqli_query($conn, "INSERT INTO users (name, email, password, user_type, p_image) VALUES ('$name', '$email', '$pass', '$user_type', '$p_image')") or die("Query failed: " . mysqli_connect_error());
             if ($insert_users) {
-                $message[] = "User Registered Successfully";
-                // echo "<script>alert('User registered successfully');</script>";
+                if (!empty($p_image)) {
+                    if ($p_image_size > 2000000) {
+                        $message[] = 'Image size is too big';
+                    } else {
+                        move_uploaded_file($p_image_tmp_name, $p_image_folder);
+                        $message[] = "User Registered Successfully";
+                        // echo "<script>alert('User registered successfully');</script>";
+                    }
+                } else {
+                    $message[] = "User Registered Successfully";
+                    // echo "<script>alert('User registered successfully');</script>";
+                }
+
                 header('location: login.php');
             } else {
                 $message[] = "User Registration Failed";
@@ -42,12 +64,15 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EGYBOOK Bookstore is one of the leading book seller in Egypt. Boasting more than 7,000 Arabic and foreign titles and aiming to provide the best book shopping experience." />
+    <meta name="description"
+        content="EGYBOOK Bookstore is one of the leading book seller in Egypt. Boasting more than 7,000 Arabic and foreign titles and aiming to provide the best book shopping experience." />
     <title>EGYBOOK</title>
     <!-- Tab Icon -->
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS Style File -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -70,12 +95,14 @@ if (isset($_POST['submit'])) {
     ?>
 
     <section class="form-container">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <h3>Register Now</h3>
             <input type="text" name="name" placeholder="Enter Your Full Name" class="box" required>
             <input type="email" name="email" placeholder="Enter Your Email Address" class="box" required>
             <input type="password" name="password" placeholder="Enter A Password" class="box" required>
             <input type="password" name="cpassword" placeholder="Confirm Password" class="box" required>
+            <input type="file" name="p_image" id="p_image" class="box" accept="image/jpg, image/jpeg, image/png">
+
             <!-- <select name="user_type" required class="box">
                 <option value="">Select User Type</option>
                 <option value="admin">Admin</option>

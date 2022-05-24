@@ -97,15 +97,12 @@ if (isset($_POST['update_product'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="EGYBOOK Bookstore is one of the leading book seller in Egypt. Boasting more than 7,000 Arabic and foreign titles and aiming to provide the best book shopping experience." />
+    <meta name="description" content="EGYBOOK Bookstore is one of the leading book seller in Egypt. Boasting more than 7,000 Arabic and foreign titles and aiming to provide the best book shopping experience." />
     <title>EGYBOOK</title>
     <!-- Tab Icon -->
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS Style File -->
     <link rel="stylesheet" href="../css/admin_styles.css">
 </head>
@@ -121,8 +118,7 @@ if (isset($_POST['update_product'])) {
             <input type="text" name="name" id="name" class="box" placeholder="Enter Product Name" required>
             <input type="number" name="price" min="0" id="price" class="box" placeholder="Enter Product Price" required>
             <input type="file" name="image" id="image" class="box" accept="image/jpg, image/jpeg, image/png" required>
-            <input type="submit" value="Add Product" name="add_product" class="btn" placeholder="Enter Product Name"
-                required>
+            <input type="submit" value="Add Product" name="add_product" class="btn" placeholder="Enter Product Name" required>
         </form>
     </section>
 
@@ -135,14 +131,13 @@ if (isset($_POST['update_product'])) {
             if (mysqli_num_rows($select_products) > 0) {
                 while ($row = mysqli_fetch_assoc($select_products)) {
             ?>
-            <div class="box">
-                <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>">
-                <div class="name"><?php echo $row['name']; ?></div>
-                <div class="price">$<?php echo $row['price']; ?>/_</div>
-                <a href="products.php?update=<?php echo $row['id']; ?>" class="option-btn">Edit</a>
-                <a href="products.php?delete=<?php echo $row['id']; ?>" class="delete-btn"
-                    onclick="return confirm('Are You Sure To Delete This Product?!');">Delete</a>
-            </div>
+                    <div class="box">
+                        <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>">
+                        <div class="name"><?php echo $row['name']; ?></div>
+                        <div class="price">$<?php echo $row['price']; ?>/_</div>
+                        <a href="products.php?update=<?php echo $row['id']; ?>" class="option-btn">Edit</a>
+                        <a href="products.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('Are You Sure To Delete This Product?!');">Delete</a>
+                    </div>
 
             <?php
                 }
@@ -164,25 +159,22 @@ if (isset($_POST['update_product'])) {
 
         ?>
 
-        <h3>Edit Product</h3>
-        <form action="" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="update_p_id" value="<?php echo $row['id']; ?>">
-            <input type="hidden" name="update_old_image" value="<?php echo $row['image']; ?>">
+                    <h3>Edit Product</h3>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="update_p_id" value="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="update_old_image" value="<?php echo $row['image']; ?>">
 
-            <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
+                        <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
 
-            <input type="text" name="update_name" id="update_name" class="box" placeholder="Update Product Name"
-                value="<?php echo $row['name']; ?>">
+                        <input type="text" name="update_name" id="update_name" class="box" placeholder="Update Product Name" value="<?php echo $row['name']; ?>">
 
-            <input type="number" name="update_price" min="0" id="update_price" class="box"
-                placeholder="Update Product Price" value="<?php echo $row['price']; ?>">
+                        <input type="number" name="update_price" min="0" id="update_price" class="box" placeholder="Update Product Price" value="<?php echo $row['price']; ?>">
 
-            <input type="file" name="update_image" id="update_image" class="box"
-                accept="image/jpg, image/jpeg, image/png">
+                        <input type="file" name="update_image" id="update_image" class="box" accept="image/jpg, image/jpeg, image/png">
 
-            <input type="submit" value="Update" name="update_product" class="btn">
-            <input type="reset" value="Cancel" id="cancel-edit" class="option-btn">
-        </form>
+                        <input type="submit" value="Update" name="update_product" class="btn">
+                        <input type="reset" value="Cancel" id="cancel-edit" class="option-btn">
+                    </form>
 
         <?php
                 }
