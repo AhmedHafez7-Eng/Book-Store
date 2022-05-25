@@ -18,6 +18,14 @@ if (isset($_POST['update_order'])) {
     $message[] = 'Payment status has been updated successfully';
 }
 
+if (isset($_GET['delete_order'])) {
+    $order_delete_id = $_GET['delete_order'];
+    mysqli_query($conn, "DELETE FROM `orders` WHERE id='$order_delete_id'") or die("Query failed: " . mysqli_connect_error());
+    $message[] = 'Order has been Canceled successfully';
+
+    header('Location: orders.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,8 +81,8 @@ if (isset($_POST['update_order'])) {
                         <option value="completed">Completed</option>
                     </select>
                     <input type="submit" value="Update" name="update_order" class="option-btn">
-                    <a href="orders.php?delete=<?php echo $row['id']; ?>" class="delete-btn"
-                        onclick="return confirm('Are you sure to cancel this order?');">Cancel</a>
+                    <a href="orders.php?delete_order=<?php echo $row['id']; ?>" class="delete-btn"
+                        onclick="return confirm('Are you sure to delete this order?');">Delete</a>
                 </form>
             </div>
 

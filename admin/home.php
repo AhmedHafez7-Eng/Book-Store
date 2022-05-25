@@ -64,7 +64,7 @@ if (!isset($admin_id)) {
 
                 if (mysqli_num_rows($select_completed) > 0) {
                     while ($fetch_completed = mysqli_fetch_assoc($select_completed)) {
-                        $total_price += $fetch_completed['total_price'];
+                        $total_price = $fetch_completed['total_price'];
                         $total_completed += $total_price;
                     };
                 };

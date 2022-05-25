@@ -482,7 +482,7 @@ section {
     grid-template-columns: repeat(auto-fit, 35rem);
     justify-content: center;
     gap: 1.5rem;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -499,11 +499,12 @@ section {
 }
 
 .orders .box-container .box p {
-    padding-bottom: 1rem;
+    padding: 1rem;
     font-size: 2rem;
     color: var(--light-color);
     text-transform: capitalize;
     line-height: 1.4;
+    box-shadow: var(--box-shadow-custom);
 }
 
 .orders .box-container .box p span {
