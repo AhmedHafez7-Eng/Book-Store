@@ -531,6 +531,69 @@ section {
     margin: .5rem 0;
 }
 
+/* =================
+========= admin/users.php =========
+==================== */
+.users .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    justify-content: center;
+    gap: 1.5rem;
+    /* align-items: flex-start; */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.users .box-container .box {
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    text-align: center;
+}
+
+.users .box-container .box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.users .box-container .box p {
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    line-height: 1.4;
+    box-shadow: var(--box-shadow-custom);
+    margin: 1.5rem 0;
+}
+
+.users .box-container .box p:last-of-type {
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -591,5 +654,27 @@ section {
 
     .title {
         font-size: 3rem;
+    }
+
+    .edit-product form,
+    .edit-profile form {
+        width: auto;
+    }
+
+    .edit-product form .btn,
+    .edit-product form .option-btn,
+    .edit-profile form .btn,
+    .edit-profile form .option-btn {
+        width: auto;
+    }
+
+    .edit-profile form img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
     }
 }

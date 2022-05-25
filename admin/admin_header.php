@@ -134,4 +134,9 @@ if (isset($_POST['update_profile'])) {
     ?>
 </section>
 
-<script src="../js/admin_script.js"></script>
+<script>
+document.querySelector('#cancel-edit-profile').onclick = () => {
+    document.querySelector('.edit-profile').style.display = 'none';
+    window.location.href = '../admin/home.php';
+}
+</script>

@@ -17,11 +17,6 @@ window.onscroll = () => {
     accountBox.classList.remove('show-account');
 }
 
-document.querySelector('#cancel-edit-profile').onclick = () => {
-    document.querySelector('.edit-profile').style.display = 'none';
-    window.location.href = '../admin/home.php';
-}
-
 document.querySelector('#cancel-edit').onclick = () => {
     // document.querySelector('.edit-product form').reset();
     document.querySelector('.edit-product').style.display = 'none';
