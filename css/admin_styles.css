@@ -474,8 +474,61 @@ section {
     width: 40%;
 }
 
+/* =================
+========= admin/orders.php =========
+==================== */
+.orders .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.orders .box-container .box {
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
 
+.orders .box-container .box p {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-transform: capitalize;
+    line-height: 1.4;
+}
+
+.orders .box-container .box p span {
+    color: var(--purple);
+}
+
+.orders .box-container .box form {
+    text-align: center;
+}
+
+.orders .box-container .box form select {
+    width: 100%;
+    background-color: var(--light-background);
+    border: var(--border-custom);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    text-transform: capitalize;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: .5rem 0;
+}
 
 
 
