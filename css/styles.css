@@ -430,6 +430,10 @@ header .main-header .flex .icons>*:hover {
     color: var(--purple);
 }
 
+.footer .box-container .box a:hover {
+    color: var(--purple);
+}
+
 .footer .box-container .box a:hover i {
     padding-right: 2rem;
 }
