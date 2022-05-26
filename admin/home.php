@@ -126,7 +126,7 @@ if (!isset($admin_id)) {
             <!-- Messages -->
             <div class="box">
                 <?php
-                $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die("Query failed: " . mysqli_connect_error());
+                $select_messages = mysqli_query($conn, "SELECT * FROM `message` WHERE msg_status='unread'") or die("Query failed: " . mysqli_connect_error());
                 $number_of_messages = mysqli_num_rows($select_messages);
                 ?>
                 <h3><?php echo $number_of_messages; ?></h3>

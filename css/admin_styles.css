@@ -579,9 +579,78 @@ section {
     text-transform: capitalize;
 }
 
+/* =================
+========= admin/contacts.php =========
+==================== */
 
+.messages .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    justify-content: center;
+    gap: 1.5rem;
+    /* align-items: flex-start; */
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.messages .box-container .box {
+    background-color: var(--light-background);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    text-align: center;
+}
 
+.messages .box-container .box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.messages .box-container .box p {
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    line-height: 1.4;
+    margin: 1.5rem 0;
+}
+
+.messages .box-container .box p:last-of-type {
+    box-shadow: var(--box-shadow-custom);
+    border: var(--border-custom);
+    max-height: 10.6rem;
+    overflow-y: scroll;
+}
+
+.messages form {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.messages form select {
+    width: 150px;
+    background-color: var(--light-background);
+    border: var(--border-custom);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    text-transform: capitalize;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: .5rem 0;
+}
 
 
 
