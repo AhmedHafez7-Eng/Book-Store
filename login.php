@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="EGYBOOK Bookstore is one of the leading book seller in Egypt. Boasting more than 7,000 Arabic and foreign titles and aiming to provide the best book shopping experience." />
-    <title>EGYBOOK</title>
+    <title>EGYBOOK | Login</title>
     <!-- Tab Icon -->
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <!-- Fontawesome CDN Link -->
