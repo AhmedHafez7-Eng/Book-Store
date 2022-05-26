@@ -200,7 +200,7 @@ section {
 }
 
 /* =================
-========= home.php =========
+========= header.php =========
 ==================== */
 
 header .top-header {
@@ -392,13 +392,61 @@ header .main-header .flex .icons>*:hover {
     width: 40%;
 }
 
+/* =================
+========= footer.php =========
+==================== */
 
+.footer {
+    background-color: var(--light-background);
+}
 
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+}
 
+.footer .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
 
+.footer .box-container .box p,
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.7rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    text-transform: capitalize;
+}
 
+.footer .box-container .box p i,
+.footer .box-container .box a i {
+    padding-right: .5rem;
+    color: var(--purple);
+}
 
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
 
+.footer .credit {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--light-color);
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: var(--border-custom);
+    text-transform: capitalize;
+}
+
+.footer .credit span {
+    color: var(--purple);
+}
 
 
 
