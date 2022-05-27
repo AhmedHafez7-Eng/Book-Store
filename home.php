@@ -91,7 +91,22 @@ if (isset($_POST['add_to_cart'])) {
         </div>
     </section>
 
-
+    <section class="home-about">
+        <h1 class="title">About EGYBOOK</h1>
+        <div class="flex">
+            <div class="imgBx">
+                <img src="img/about-img.jpg" alt="about">
+            </div>
+            <div class="content">
+                <p><span>EGY<span>BOOK</span></span> Bookstore is one of the leading book seller in Egypt. Boasting more
+                    than 7,000
+                    Arabic and
+                    foreign
+                    titles and aiming to provide the best book shopping experience.</p>
+                <a href="about.php" class="white-btn">discover more</a>
+            </div>
+        </div>
+    </section>
 
 
 

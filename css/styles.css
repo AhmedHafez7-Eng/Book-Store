@@ -581,16 +581,52 @@ header .main-header .flex .icons>*:hover {
     border: var(--border-custom);
 }
 
+.home-about .flex {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0 2rem;
+}
 
+.home-about .flex .imgBx {
+    flex: 1 1 40rem;
+}
 
+.home-about .flex .imgBx img {
+    width: 100%;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
 
+.home-about .flex .content {
+    flex: 1 1 40rem;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-custom);
+}
 
+.home-about .flex .content p {
+    font-size: 1.7rem;
+    color: var(--black);
+    line-height: 1.5;
+    padding: 1rem 0;
+}
 
+.home-about .flex .content p span {
+    color: var(--purple);
+    font-weight: 600;
+    font-size: 2.5rem;
+}
 
-
-
-
-
+.home-about .flex .content p span span {
+    color: var(--orange);
+}
 
 
 
