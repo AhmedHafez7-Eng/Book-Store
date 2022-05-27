@@ -24,7 +24,6 @@ if (isset($_POST['add_to_cart'])) {
         $message[] = "Product added to cart";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -64,14 +63,15 @@ if (isset($_POST['add_to_cart'])) {
         <h1 class="title">latest Books</h1>
         <div class="box-container">
             <?php
-            $select_products = mysqli_query($conn, "SELECT * FROM products") or die("Query failed: " . mysqli_connect_error());
+            $number_to_show = 3;
+            $select_products = mysqli_query($conn, "SELECT * FROM products LIMIT 0,$number_to_show") or die("Query failed: " . mysqli_connect_error());
 
             if (mysqli_num_rows($select_products) > 0) {
                 while ($row = mysqli_fetch_assoc($select_products)) {
 
             ?>
 
-            <form action="" method="post" class="box">
+            <form action="" method="post" class="box" id="result_para">
                 <img src="uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
                 <div class="name"><?php echo $row['name']; ?></div>
                 <div class="price">EGP <?php echo $row['price']; ?>/-</div>
@@ -89,6 +89,8 @@ if (isset($_POST['add_to_cart'])) {
             }
             ?>
         </div>
+        <input type="hidden" id="result_no" value="3">
+        <input type="button" id="load" value="Load More Results" class="option-btn">
     </section>
 
     <section class="home-about">
@@ -120,18 +122,40 @@ if (isset($_POST['add_to_cart'])) {
     </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
     <?php include 'footer.php'; ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+
+
+    <!-- Load more 3 products each time clicking on load more button -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#load").click(function() {
+            loadmore();
+        });
+    });
+
+    function loadmore() {
+        var val = document.getElementById("result_no").value;
+        $.ajax({
+            type: 'post',
+            url: 'load_more.php',
+            data: {
+                getresult: val
+            },
+            success: function(response) {
+                var content = document.getElementById("result_para");
+                content.parentElement.insertAdjacentHTML('beforeend', response);
+
+                // We increase the value by 2 because we limit the results by 2
+                document.getElementById("result_no").value = Number(val) + 3;
+            }
+        });
+    }
+    </script>
+
+
+
 
     <script src="js/main.js"></script>
 </body>
