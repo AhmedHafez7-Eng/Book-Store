@@ -108,7 +108,16 @@ if (isset($_POST['add_to_cart'])) {
         </div>
     </section>
 
-
+    <section class="home-contact">
+        <div class="content">
+            <h3>have any questions</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, deleniti dolor. Voluptates assumenda,
+                iusto, et quos, quasi tempore totam nihil commodi illo suscipit optio eos ex dignissimos magnam
+                praesentium
+                hic distinctio obcaecati animi accusamus debitis. Assumenda, ut! Tenetur, dolores veritatis!</p>
+            <a href="contact.php" class="white-btn">contact us</a>
+        </div>
+    </section>
 
 
 

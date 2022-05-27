@@ -628,12 +628,28 @@ header .main-header .flex .icons>*:hover {
     color: var(--orange);
 }
 
+.home-contact {
+    background-color: var(--black);
+}
 
+.home-contact .content {
+    max-width: 70rem;
+    text-align: center;
+    margin: 0 auto;
+}
 
+.home-contact .content h3 {
+    font-size: 3rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
 
-
-
-
+.home-contact .content p {
+    font-size: 1.6rem;
+    color: var(--light-white);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
 
 
 
