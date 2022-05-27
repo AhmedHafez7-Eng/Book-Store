@@ -59,6 +59,14 @@ section {
     padding: 3rem 2rem;
 }
 
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
 .btn,
 .option-btn,
 .delete-btn,
@@ -133,6 +141,16 @@ section {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
+}
+
+.empty {
+    padding: 1.5rem;
+    text-align: center;
+    border: var(--border-custom);
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 2rem;
+    text-transform: capitalize;
 }
 
 @keyframes fadeIn {
@@ -498,6 +516,86 @@ header .main-header .flex .icons>*:hover {
     padding: 1rem 0;
     line-height: 2;
 }
+
+.home-products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.home-products .box-container .box {
+    background-color: var(--white);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    text-align: center;
+    position: relative;
+}
+
+.home-products .box-container .box img {
+    height: 30rem;
+    padding-top: 2.5rem;
+}
+
+.home-products .box-container .box .name {
+    font-size: 2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.home-products .box-container .box .price {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--red);
+    padding: 1rem;
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.home-products .box-container .box .quantity {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    border: var(--border-custom);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

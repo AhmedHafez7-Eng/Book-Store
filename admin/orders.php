@@ -68,7 +68,7 @@ if (isset($_GET['delete_order'])) {
                         <p>email: <span><?php echo $row['email'] ?></span></p>
                         <p>address: <span><?php echo $row['address'] ?></span></p>
                         <p>total products: <span><?php echo $row['total_products'] ?></span></p>
-                        <p>total price: <span>$<?php echo $row['total_price'] ?>/-</span></p>
+                        <p>total price: <span>EGP <?php echo $row['total_price'] ?>/-</span></p>
                         <p>payment method: <span><?php echo $row['method'] ?></span></p>
                         <form action="" method="post">
                             <input type="hidden" name="order_id" value="<?php echo $row['id'] ?>">

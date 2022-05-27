@@ -41,6 +41,51 @@ if (!isset($user_id)) {
         </div>
     </section>
 
+    <section class="home-products">
+        <h1 class="title">Our Books</h1>
+        <div class="box-container">
+            <?php
+            $select_products = mysqli_query($conn, "SELECT * FROM products") or die("Query failed: " . mysqli_connect_error());
+
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($row = mysqli_fetch_assoc($select_products)) {
+
+            ?>
+
+                    <form action="" method="post" class="box">
+                        <img src="uploaded_img/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
+                        <div class="name"><?php echo $row['name']; ?></div>
+                        <div class="price">EGP <?php echo $row['price']; ?>/-</div>
+                        <input type="number" name="product_quantity" min="1" value="1" class="quantity">
+                        <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
+                        <input type="hidden" name="product_price" value="<?php echo $row['price']; ?>">
+                        <input type="hidden" name="product_image" value="<?php echo $row['image']; ?>">
+                        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                    </form>
+
+            <?php
+                }
+            } else {
+                echo '<p class="empty">No products added yet!</p>';
+            }
+            ?>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <?php include 'footer.php'; ?>
