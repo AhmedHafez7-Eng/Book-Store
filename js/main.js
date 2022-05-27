@@ -1,4 +1,4 @@
-let navbar = document.querySelector('.header .navbar');
+let navbar = document.querySelector('.header .main-header .navbar');
 let accountBox = document.querySelector('.header .user-box');
 
 
@@ -15,4 +15,10 @@ document.querySelector('#user-btn').onclick = () => {
 window.onscroll = () => {
     navbar.classList.remove('show-menu');
     accountBox.classList.remove('show-account');
+
+    if (window.scrollY > 60) {
+        document.querySelector('.header .main-header').classList.add('sticky');
+    } else {
+        document.querySelector('.header .main-header').classList.remove('sticky');
+    }
 }

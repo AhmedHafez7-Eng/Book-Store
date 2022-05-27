@@ -109,6 +109,12 @@ section {
     background-color: var(--black);
 }
 
+.white-btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: var(--box-shadow-custom);
+}
+
 .message {
     position: sticky;
     top: 0;
