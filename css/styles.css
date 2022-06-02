@@ -649,6 +649,10 @@ header .main-header .flex .icons>*:hover {
     color: var(--light-white);
     padding: 1rem 0;
     line-height: 1.5;
+    width: 500px;
+    text-align: center;
+    margin: 1rem auto;
+    letter-spacing: .3rem;
 }
 
 #load {
@@ -706,6 +710,12 @@ header .main-header .flex .icons>*:hover {
 
     .home .content h3 {
         font-size: 3.5rem;
+    }
+}
+
+@media(max-width:600px) {
+    .home-contact .content p {
+        width: 100%;
     }
 }
 
