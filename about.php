@@ -61,9 +61,19 @@ if (!isset($user_id)) {
         <h1 class="title">client's reviews</h1>
 
         <div class="box-container">
+
+            <?php
+
+            $select_reviews = mysqli_query($conn, "SELECT m.user_id, m.name, m.message, u.p_image FROM message m LEFT JOIN users u on u.id = m.user_id GROUP BY(m.user_id)") or die("Query failed: " . mysqli_connect_error());
+
+            if (mysqli_num_rows($select_reviews) > 0) {
+                while ($row = mysqli_fetch_assoc($select_reviews)) {
+
+            ?>
+
             <div class="box">
-                <img src="img/pic-1.png" alt="client">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
+                <img src="users_img/<?php echo $row['p_image']; ?>" alt="client">
+                <p><?php echo $row['message']; ?></p>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -71,56 +81,15 @@ if (!isset($user_id)) {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <h3>Omar Zaghlol</h3>
+                <h3><?php echo $row['name']; ?></h3>
             </div>
-            <div class="box">
-                <img src="img/pic-2.png" alt="client">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h3>Laila Ibrahim</h3>
-            </div>
-            <div class="box">
-                <img src="img/pic-3.png" alt="client">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h3>Mahmoud Ashraf</h3>
-            </div>
-            <div class="box">
-                <img src="img/pic-4.png" alt="client">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h3>Noha Fawzy</h3>
-            </div>
-            <div class="box">
-                <img src="img/pic-5.png" alt="client">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h3>Amr Elsayed</h3>
-            </div>
+
+            <?php
+                }
+            } else {
+                echo "<p class='empty'>No reviews found yet!</p>";
+            }
+            ?>
         </div>
     </section>
 
@@ -128,64 +97,64 @@ if (!isset($user_id)) {
         <h1 class="title">our authors</h1>
         <div class="box-container">
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-1.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>William Shakespeare</h3>
             </div>
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-2.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>Virginia Woolf</h3>
             </div>
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-3.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>George Orwell</h3>
             </div>
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-4.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>Agatha Christie</h3>
             </div>
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-5.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>Kurt Vonnegut</h3>
             </div>
             <div class="box">
-                <img src="img/pic-5.png" alt="author">
+                <img src="img/author-6.jpg" alt="author">
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
-                    <a href="#" class="fab fa-github"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100005116839262" class="fab fa-facebook-f"></a>
+                    <a href="https://www.linkedin.com/in/ahmedhafez247/" class="fab fa-linkedin"></a>
+                    <a href="https://github.com/AhmedHafez7-Eng" class="fab fa-github"></a>
+                    <a href="https://www.instagram.com/ahmedhafez247/" class="fab fa-instagram"></a>
                 </div>
-                <h3>Amr Elsayed</h3>
+                <h3>Celeste Ng</h3>
             </div>
         </div>
     </section>
