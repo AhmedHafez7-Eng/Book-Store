@@ -631,9 +631,21 @@ section {
 
 .messages .box-container .box p:last-of-type {
     box-shadow: var(--box-shadow-custom);
-    border: var(--border-custom);
-    max-height: 10.6rem;
+    /* border: var(--border-custom); */
+    height: 10.6rem;
     overflow-y: scroll;
+}
+
+.messages .box-container .box p:last-of-type::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.messages .box-container .box p:last-of-type::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.messages .box-container .box:hover p:last-of-type::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
 }
 
 .messages form {
