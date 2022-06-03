@@ -123,7 +123,6 @@ if (isset($_POST['add_to_cart'])) {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 
-
     <!-- Load more 3 products each time clicking on load more button -->
     <script type="text/javascript">
     $(document).ready(function() {
@@ -134,20 +133,29 @@ if (isset($_POST['add_to_cart'])) {
 
     function loadmore() {
         var val = document.getElementById("result_no").value;
-        $.ajax({
-            type: 'post',
-            url: 'load_more.php',
-            data: {
-                getresult: val
-            },
-            success: function(response) {
-                var content = document.getElementById("result_para");
-                content.parentElement.insertAdjacentHTML('beforeend', response);
 
-                // We increase the value by 2 because we limit the results by 2
-                document.getElementById("result_no").value = Number(val) + 3;
-            }
-        });
+        if (val >= 6) {
+            document.getElementById("load").style.display = "none";
+            document.querySelector(".home-products").insertAdjacentHTML("beforeend",
+                '<div style="width:fit-content; margin:2.5rem auto;"><a href="shop.php" class="option-btn">see more</a></div>'
+                );
+
+        } else {
+            $.ajax({
+                type: 'post',
+                url: 'load_more.php',
+                data: {
+                    getresult: val
+                },
+                success: function(response) {
+                    var content = document.getElementById("result_para");
+                    content.parentElement.insertAdjacentHTML('beforeend', response);
+
+                    // We increase the value by 3 because we limit the results by 3
+                    document.getElementById("result_no").value = Number(val) + 3;
+                }
+            });
+        }
     }
     </script>
 
