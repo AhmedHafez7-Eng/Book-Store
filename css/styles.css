@@ -810,6 +810,65 @@ header .main-header .flex .icons>*:hover {
     background-color: var(--white);
 }
 
+/* =================
+========= contact.php =========
+==================== */
+.contact form {
+    max-width: 50rem;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    text-align: center;
+}
+
+.contact form h3 {
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contact form .box {
+    margin: 1rem 0;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 1.2rem 1.4rem;
+    box-shadow: var(--box-shadow-custom);
+    color: var(--black);
+    font-size: 1.8rem;
+    border: 1px solid transparent;
+}
+
+.contact form .box::placeholder {
+    text-transform: capitalize;
+    color: rgb(185, 185, 185);
+}
+
+.contact form .box:focus {
+    border: 1px solid var(--purple);
+}
+
+.contact form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+
+
+
+
 
 
 
