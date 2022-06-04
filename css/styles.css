@@ -707,7 +707,7 @@ header .main-header .flex .icons>*:hover {
 /* =================
 ========= about.php =========
 ==================== */
-.reviews .box-container,
+/* .reviews .box-container, */
 .authors .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -719,6 +719,8 @@ header .main-header .flex .icons>*:hover {
 }
 
 .reviews .box-container .box {
+    width: 500px;
+    max-width: 100%;
     background-color: var(--white);
     border-radius: .5rem;
     -webkit-border-radius: .5rem;

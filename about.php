@@ -27,6 +27,10 @@ if (!isset($user_id)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper Slider CDN Link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <!-- Custom CSS Style File -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -57,10 +61,10 @@ if (!isset($user_id)) {
         </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews swiper">
         <h1 class="title">client's reviews</h1>
 
-        <div class="box-container">
+        <div class="box-container swiper-wrapper">
 
             <?php
 
@@ -71,7 +75,7 @@ if (!isset($user_id)) {
 
             ?>
 
-            <div class="box">
+            <div class="box swiper-slide">
                 <img src="users_img/<?php echo $row['p_image']; ?>" alt="client">
                 <p><?php echo $row['message']; ?></p>
                 <div class="stars">
@@ -91,6 +95,8 @@ if (!isset($user_id)) {
             }
             ?>
         </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
     </section>
 
     <section class="authors">
@@ -160,7 +166,7 @@ if (!isset($user_id)) {
     </section>
 
     <?php include 'footer.php'; ?>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
