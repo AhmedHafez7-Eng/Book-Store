@@ -880,28 +880,136 @@ header .main-header .flex .icons>*:hover {
     resize: none;
 }
 
+/* =================
+========= cart.php =========
+==================== */
+.shopping-cart .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
 
+.shopping-cart .box-container .box {
+    background-color: var(--white);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    text-align: center;
+    position: relative;
+}
 
+.shopping-cart .box-container .box a.fa-times {
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    font-size: 2rem;
+    background-color: var(--red);
+    color: var(--white);
+    cursor: pointer;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 
+.shopping-cart .box-container .box a.fa-times:hover {
+    background-color: var(--black);
+}
 
+.shopping-cart .box-container .box img {
+    height: 30rem;
+}
 
+.shopping-cart .box-container .box .name {
+    font-size: 2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
 
+.shopping-cart .box-container .box .price {
+    font-size: 2.5rem;
+    color: var(--red);
+    padding: 1rem 0;
+}
 
+.shopping-cart .box-container .box input[type="number"] {
+    margin: .5rem 0;
+    font-size: 2rem;
+    border: var(--border-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    width: 9rem;
+    color: var(--black);
+}
 
+.shopping-cart .box-container .box .sub-total {
+    font-size: 2rem;
+    color: var(--light-color);
+    padding-top: 1.5rem;
+    text-transform: capitalize;
+}
 
+.shopping-cart .box-container .box .sub-total span {
+    font-size: 2.5rem;
+    color: var(--red);
+}
 
+.shopping-cart .cart-total {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border: var(--border-custom);
+    margin-top: 2rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
 
+.shopping-cart .cart-total p {
+    font-size: 3rem;
+    color: var(--light-color);
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
 
+.shopping-cart .cart-total p span {
+    font-size: 3.5rem;
+    color: var(--red);
+}
 
+.shopping-cart .cart-total .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
 
-
-
-
-
-
-
-
-
+.shopping-cart .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    user-select: none;
+}
 
 
 
@@ -970,6 +1078,10 @@ header .main-header .flex .icons>*:hover {
 
     .title {
         font-size: 3rem;
+    }
+
+    .heading {
+        min-height: 30vh;
     }
 
     .heading h3 {
