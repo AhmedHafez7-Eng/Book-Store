@@ -55,8 +55,7 @@ if (isset($_GET['unread_msg'])) {
 
         <form action="" method="post">
             <select name="msg_type">
-                <option value="" selected disabled>Choose..</option>
-                <option value="unread">Unread</option>
+                <option value="unread" selected>Unread</option>
                 <option value="read">Read</option>
             </select>
             <input type="submit" value="Show Messages" name="search_msg" class="option-btn">
@@ -71,7 +70,7 @@ if (isset($_GET['unread_msg'])) {
             if (isset($_POST['search_msg'])) {
                 $msg_type = $_POST['msg_type'];
 
-                if ($msg_type == 'unread' || $msg_type == '') {
+                if ($msg_type == 'unread') {
                     $select_messages = mysqli_query($conn, "SELECT * FROM `message` WHERE msg_status='unread'") or die("Query failed: " . mysqli_connect_error());
                 } else {
                     $select_messages = mysqli_query($conn, "SELECT * FROM `message` WHERE msg_status='read'") or die("Query failed: " . mysqli_connect_error());

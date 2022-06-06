@@ -104,8 +104,7 @@ if (isset($_POST['submit'])) {
             <input type="file" name="p_image" id="p_image" class="box" accept="image/jpg, image/jpeg, image/png">
 
             <!-- <select name="user_type" required class="box">
-                <option value="">Select User Type</option>
-                <option value="admin">Admin</option>
+                <option value="admin" selected>Admin</option>
                 <option value="user">User</option>
             </select> -->
             <input type="submit" name="submit" value="Register" class="btn">
