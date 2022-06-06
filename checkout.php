@@ -12,7 +12,7 @@ if (!isset($user_id)) {
 if (isset($_POST['order_btn'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $address = mysqli_real_escape_string($conn, 'flat no' . $_POST['flat'] . ',' . $_POST['street'] . ',' . $_POST['state'] . ',' . $_POST['city'] . ',' . $_POST['country'] . '-' . $_POST['pin_code']);
+    $address = mysqli_real_escape_string($conn, 'flat no. ' . $_POST['flat'] . ', ' . $_POST['street'] . ', ' . $_POST['state'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ' - ' . $_POST['pin_code']);
     $phone = $_POST['phone'];
     $placed_on = date('d-M-Y');
     $method = mysqli_real_escape_string($conn, $_POST['method']);

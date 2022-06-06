@@ -1018,12 +1018,12 @@ header .main-header .flex .icons>*:hover {
 ==================== */
 .display-order {
     max-width: 1200px;
-    margin: 2rem 0;
+    margin: 2rem auto;
     /* padding-bottom: 0; */
     text-align: center;
     box-shadow: var(--box-shadow-custom);
-    width: 400px;
-    max-width: 100%;
+    /* width: 400px;
+    max-width: 100%; */
 }
 
 .display-order h3,
@@ -1123,6 +1123,89 @@ header .main-header .flex .icons>*:hover {
 .checkout form .flex .input-box select option {
     text-transform: capitalize;
 }
+
+/* =================
+========= orders.php =========
+==================== */
+.placed-orders .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.placed-orders .box-container .box {
+    flex: 1 1 40rem;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.placed-orders .box-container .box::-webkit-scrollbar {
+    width: 0;
+}
+
+.placed-orders .box-container .box:hover::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.placed-orders .box-container .box p {
+    font-size: 2rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.placed-orders .box-container .box p span {
+    font-size: 2.5rem;
+    color: var(--purple);
+    font-weight: 400;
+    text-transform: initial;
+}
+
+.placed-orders .box-container .box p:last-of-type span {
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -167,6 +167,29 @@ if (!isset($user_id)) {
 
     <?php include 'footer.php'; ?>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper(".swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+            // pauseOnMouseEnter: true,
+        },
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+    </script>
     <script src="js/main.js"></script>
 </body>
 
