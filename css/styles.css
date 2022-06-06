@@ -1013,9 +1013,116 @@ header .main-header .flex .icons>*:hover {
     user-select: none;
 }
 
+/* =================
+========= checkout.php =========
+==================== */
+.display-order {
+    max-width: 1200px;
+    margin: 2rem 0;
+    /* padding-bottom: 0; */
+    text-align: center;
+    box-shadow: var(--box-shadow-custom);
+    width: 400px;
+    max-width: 100%;
+}
 
+.display-order h3,
+.checkout form h3 {
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
 
+.display-order p {
+    display: inline-block;
+    font-size: 2rem;
+    background-color: var(--light-bg);
+    color: var(--black);
+    /* text-transform: capitalize; */
+    margin: .5rem;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--box-shadow-custom);
+}
 
+.display-order p span {
+    font-size: 2.5rem;
+    color: var(--red);
+}
+
+.display-order .grand-total {
+    border-top: thin solid #CCC;
+    padding-top: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--light-color);
+    margin-top: 2rem;
+    text-transform: capitalize;
+}
+
+.display-order .grand-total span {
+    font-size: 3.5rem;
+    color: var(--red);
+}
+
+.checkout form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: var(--box-shadow-custom);
+    background-color: var(--light-bg);
+}
+
+.checkout form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.checkout form .flex .input-box {
+    flex: 1 1 40rem;
+}
+
+.checkout form .flex .input-box label {
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.checkout form .flex .input-box input,
+.checkout form .flex .input-box select {
+    width: 100%;
+    font-size: 2rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    padding: 1.2rem 1.4rem;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-custom);
+    border: var(--border-custom);
+    border-color: transparent;
+    margin: 1rem 0;
+}
+
+.checkout form .flex .input-box input::placeholder {
+    color: #777;
+    text-transform: capitalize;
+    opacity: 0.5;
+}
+
+.checkout form .flex .input-box input:focus {
+    border: var(--border-custom);
+}
+
+.checkout form .flex .input-box select,
+.checkout form .flex .input-box select option {
+    text-transform: capitalize;
+}
 
 
 
