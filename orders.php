@@ -52,7 +52,8 @@ if (!isset($user_id)) {
             ?>
 
             <div class="box">
-                <p>placed on : <span><?php echo $row['name']; ?></span></p>
+                <p>placed on : <span><?php echo $row['placed_on']; ?></span></p>
+                <p>name : <span><?php echo $row['name']; ?></span></p>
                 <p>email : <span><?php echo $row['email']; ?></span></p>
                 <p>phone : <span><?php echo $row['number']; ?></span></p>
                 <p>address : <span><?php echo $row['address']; ?></span></p>
