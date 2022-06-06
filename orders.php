@@ -62,7 +62,7 @@ if (!isset($user_id)) {
                 <p>payment status : <span style="color:<?php if ($row['payment_status'] == 'pending') {
                                                                     echo 'var(--orange)';
                                                                 } else {
-                                                                    echo 'var(--purple)';
+                                                                    echo 'green';
                                                                 } ?>"><?php echo $row['payment_status']; ?></span></p>
             </div>
 

@@ -1177,15 +1177,46 @@ header .main-header .flex .icons>*:hover {
     text-transform: capitalize;
 }
 
+/* =================
+========= search-books.php =========
+==================== */
+.search-form form {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
 
+.search-form .box {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    background-color: var(--light-bg);
+    box-shadow: var(--box-shadow-custom);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border: var(--border-custom);
+    border-color: transparent;
+}
 
+.search-form .box:focus {
+    border: var(--border-custom);
+}
 
+.search-form .box::placeholder {
+    color: #777;
+    text-transform: capitalize;
+    opacity: 0.5;
+    letter-spacing: .3rem;
+}
 
-
-
-
-
-
+.search-form .btn {
+    margin: 0;
+}
 
 
 
@@ -1298,4 +1329,14 @@ header .main-header .flex .icons>*:hover {
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
     }
+
+    .search-form form {
+        flex-direction: column;
+    }
+
+    .search-form form .btn {
+        width: fit-content;
+        margin: 1rem auto;
+    }
+
 }
